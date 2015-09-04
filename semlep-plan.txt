@@ -124,3 +124,39 @@
 │			queries: paged, searchable, read/not-read, adviserId=profile.userId
 │			messages: paged, searchable, read/not-read, adviserId=profile.userId
 │				messageSend()
+
+
+
+yo angular-meteor:route business-stats
+yo angular-meteor:route cms
+yo angular-meteor:route contacts
+yo angular-meteor:route cookie-policy
+yo angular-meteor:route dashboard
+yo angular-meteor:route faqs
+yo angular-meteor:route locations
+yo angular-meteor:route messages
+yo angular-meteor:route privacy-policy
+yo angular-meteor:route profiles
+yo angular-meteor:route queries
+yo angular-meteor:route search
+yo angular-meteor:route search-results
+yo angular-meteor:route sectors
+yo angular-meteor:route settings
+yo angular-meteor:route sizes
+yo angular-meteor:route specialisms
+yo angular-meteor:route stages
+yo angular-meteor:route terms
+yo angular-meteor:route users
+yo angular-meteor:directive dashboardAdmin
+yo angular-meteor:directive dashboardAdviser
+yo angular-meteor:directive profileAdmin
+yo angular-meteor:directive profileAdviser
+yo angular-meteor:directive profileAll
+yo angular-meteor:directive imageUploader
+yo angular-meteor:directive login
+yo angular-meteor:directive postcode
+yo angular-meteor:directive profileSearch
+yo angular-meteor:directive resourceImage
+yo angular-meteor:directive settingsAdmin
+yo angular-meteor:directive settingsUser
+yo angular-meteor:factory login
