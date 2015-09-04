@@ -1,0 +1,126 @@
+
+├───about
+│	basic:
+│		data: cms.page is 'about'
+├───business-stats
+│	list: admin
+│	details: admin
+├───components
+│   ├───dashboardAdmin
+│   │		data:
+│   │			counts
+│   │			profiles waiting to be verified
+│   │			queries: paged, searchable, read/not-read
+│   │				queryEmail
+│   │			contacts: paged, searchable, read/not-read
+│   │				contactEmail
+│   │		links:
+│   │
+│   ├───dashboardAdviser
+│   │		data:
+│   │			profile status
+│   │			queries: paged, searchable, read/not-read, adviserId=Meteor.userId()
+│   │				queryMarkRead()
+│   │				queryEmail()
+│   ├───profileAdmin
+│   │		data: 
+│   │			profile.slug is :profileSlug
+│   │				profileToggleVerified()
+│   ├───profileAdviser
+│   │		data: profiles.userId is Meteor.userId()
+│   ├───profileAll
+│   │		data: profiles.slug is :profileSlug
+│   ├───imageUploader
+│   ├───login
+│   ├───postcode
+│   ├───profileSearch
+│   ├───resourceImage
+│   ├───settingsAdmin
+│   ├───settingsUser
+│   └───toolbar
+├───cms
+│	list: admin
+│	details: admin
+├───contacts
+│	list: admin
+│	details: admin
+├───cookie-policy
+│	basic:
+│		data: cms.page is 'cookie-policy'
+├───dashboard
+│	basic:
+│		admin:
+│			directive: dashboardAdmin
+│		adviser:
+│			[if no profile then redirect to /profiles/new]
+│			directive: dashboardAdviser
+├───faqs
+│	list: admin
+│	details:
+│		admin:
+│		adviser:
+│		all:
+├───lib
+├───locations
+│	list: admin
+│	details: admin
+├───main
+│	basic:
+│		data: cms.page is 'main'
+├───messages
+│	list:
+│		admin:
+│		adviser:
+│	details:
+│		admin:
+│		adviser:
+├───privacy-policy
+│	basic:
+│		data: cms.page is 'privacy-policy'
+├───profiles
+│	list: admin
+│	details:
+│		admin:
+│			directive: profileAdmin
+│		adviser:
+│			owner:
+│				directive: profileAdviser
+│			visitor:
+│				directive: profileAll
+│		all:
+│			directive: profileAll
+├───queries
+│	list: admin
+│	details: admin
+├───search
+│	basic:
+├───search-results
+│	basic:
+├───sectors
+│	list: admin
+│	details: admin
+├───settings
+│	admin:
+│		directive: settingsAdmin
+│	adviser:
+│		directive: settingsAdviser
+├───sizes
+│	list: admin
+│	details: admin
+├───specialisms
+│	list: admin
+│	details: admin
+├───stages
+│	list: admin
+│	details: admin
+├───terms
+│	basic:
+│		data: cms.page is 'terms'
+├───users
+│	list: admin
+│	details: admin
+│		data:
+│			user._id is :userId
+│			queries: paged, searchable, read/not-read, adviserId=profile.userId
+│			messages: paged, searchable, read/not-read, adviserId=profile.userId
+│				messageSend()
