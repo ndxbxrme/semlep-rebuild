@@ -7,4 +7,4 @@ angular.module 'semlepRebuildApp'
     $scope.profile = Profiles.findOne
       adviserId: Meteor.userId()
     if not $scope.profile and not $scope.login.isAdmin()
-      $location.path = 'profiles/new'
+      $location.path 'profiles/new'
