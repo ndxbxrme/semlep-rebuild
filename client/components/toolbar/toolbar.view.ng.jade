@@ -1,11 +1,29 @@
 div
   login
   .toolbar
-    span.navbar-left 
-      a(href='/') semlepRebuildApp
-    span.navbar-right(ng-hide='currentUser._id')
-      a(href='', ng-click='login.popLogin()') Login/register
+    .navbar-left 
+      div
+        a(href='/') semlepRebuildApp
+    .navbar-right(ng-hide='currentUser._id')
+      div
+        a(href='/search') Find Advice
+      div
+        a(href='/faqs') FAQs
+      div
+        a(href='/about') About Us
+      div
+        a(href='/contacts/new') Contact Us
+      div
+        a(href='', ng-click='login.popLogin()') Login/register
       //meteor-include(src='loginButtons')
-      a(ng-href='/about') About
-    span.navbar-right(ng-show='currentUser._id')
-      a(href='', ng-click='login.doLogout()') Logout
+    .navbar-right(ng-show='currentUser._id')
+      div(ng-hide='login.isAdmin()')
+        a(href='/contacts/new') Contact Us
+      div
+        a(href='/dashboard') Dashboard
+      div(ng-hide='login.isAdmin()')
+        a(href='/profile') Profile
+      div
+        a(href='/settings') Settings
+      div
+        a(href='', ng-click='login.doLogout()') Logout
