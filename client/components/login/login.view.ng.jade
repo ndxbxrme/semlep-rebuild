@@ -9,7 +9,7 @@
             i.fa.fa-fw.fa-close
       .login-form
         .subtitle.left Login or register
-        .error.right {{login.loginError}}
+        .error.right {{login.loginError()}}
         .mdl-textfield.mdl-js-textfield
           input.mdl-textfield__input(type='text', id='email', ng-model='loginUser.email')
           label.mdl-textfield__label(for='email') Email
