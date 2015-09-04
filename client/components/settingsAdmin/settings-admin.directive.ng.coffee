@@ -5,5 +5,9 @@ angular.module 'semlepRebuildApp'
   restrict: 'EA'
   templateUrl: 'client/components/settingsAdmin/settings-admin.view.html'
   replace: true
+  scope: {}
   link: (scope, elem, attrs) ->
-    scope.property = 'settingsAdmin'
+    scope.getSpecialisms = ->
+      Meteor.call 'getSpecialisms'
+    scope.getQuestions = ->
+      Meteor.call 'getQuestions'

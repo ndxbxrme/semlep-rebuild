@@ -5,6 +5,7 @@ angular.module 'semlepRebuildApp', [
   'ngAnimate'
   'multi-check'
   'ngFileUpload'
+  'angular-medium-editor'
 ]
 
 onReady = () ->

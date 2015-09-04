@@ -22,7 +22,6 @@ accounts-github
 bozhao:link-accounts
 todda00:friendly-slugs
 alanning:roles
-ndxbxrme:modified
 fortawesome:fontawesome
 natestrauser:animate-css
 angular:angular-animate
@@ -31,3 +30,5 @@ chrismbeckett:toastr
 ndxbxrme:angular-multi-check
 mrt:modernizr-meteor
 http
+underscorestring:underscore.string
+ndxbxrme:modified

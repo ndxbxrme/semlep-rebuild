@@ -11,11 +11,12 @@
     "tests"
   ],
   "dependencies": {
+    "angular-medium-editor": "~0.1.0",
     "ng-file-upload": "^4.2.1"
   },
   "overrides": {
     "angular": {
-      "main": [] 
+      "main": []
     }
   }
 }

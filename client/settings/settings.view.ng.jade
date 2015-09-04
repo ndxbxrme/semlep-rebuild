@@ -1,1 +1,15 @@
-.container This is the {{ viewName }} view
+.settings-page.container 
+  div(ng-show='currentUser.services.github.accessToken') Linked to Github
+  div(ng-hide='currentUser.services.github.accessToken')
+    a(href='', ng-click='login.linkWithGithub()') Link to Github
+  div(ng-show='currentUser.services.twitter.accessToken') Linked to Twitter
+  div(ng-hide='currentUser.services.twitter.accessToken')
+    a(href='', ng-click='login.linkWithTwitter()') Link to Twitter
+  div(ng-show='currentUser.services.facebook.accessToken') Linked to Facebook
+  div(ng-hide='currentUser.services.facebook.accessToken')
+    a(href='', ng-click='login.linkWithFacebook()') Link to Facebook
+  div(ng-show='currentUser.services.google.accessToken') Linked to Google
+  div(ng-hide='currentUser.services.google.accessToken')
+    a(href='', ng-click='login.linkWithGoogle()') Link to Google
+  settings-admin(ng-show='login.isAdmin()')
+  settings-adviser(ng-show='login.isAdviser()')

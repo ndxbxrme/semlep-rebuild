@@ -59,7 +59,7 @@ mquandalle:stylus@1.1.1
 mrt:modernizr-meteor@2.6.2
 natestrauser:animate-css@3.2.6
 ndxbxrme:angular-multi-check@0.6.0
-ndxbxrme:modified@0.2.0
+ndxbxrme:modified@0.2.1
 ndxbxrme:ng-coffeescript@1.2.2
 npm-bcrypt@0.7.8_2
 oauth@1.1.4
@@ -87,6 +87,7 @@ tracker@1.0.7
 twitter@1.1.4
 ui@1.0.6
 underscore@1.0.3
+underscorestring:underscore.string@3.2.1
 urigo:angular@0.9.3
 url@1.0.4
 webapp@1.2.0
