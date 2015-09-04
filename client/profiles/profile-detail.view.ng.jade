@@ -1,7 +1,4 @@
 .profile-detail.container
-  h1 Here are the details of the profile
-  form(ng-submit='save()', name='form', novalidate='')
-    input.form-control(type='text', placeholder='Name', ng-model='profile.name')
-    span.input-group-btn
-      input.btn.btn-primary(type='submit', value='Save')
-      input.btn(type='button', ng-click='reset()', value='Reset')
+  profile-admin(ng-show='login.isAdmin()')
+  profile-adviser(ng-show='login.isAdviser() && isOwner()')
+  profile-all(ng-show='!isOwner()')

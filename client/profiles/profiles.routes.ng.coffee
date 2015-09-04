@@ -8,6 +8,6 @@ angular.module 'semlepRebuildApp'
     templateUrl: 'client/profiles/profiles-list.view.html'
     controller: 'ProfilesListCtrl'
   .state 'profile-detail',
-    url: '/profiles/:profileId'
+    url: '/profiles/:profileSlug'
     templateUrl: 'client/profiles/profile-detail.view.html'
     controller: 'ProfileDetailCtrl'
