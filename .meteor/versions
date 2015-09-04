@@ -9,6 +9,7 @@ accounts-ui@1.1.5
 accounts-ui-unstyled@1.1.7
 alanning:roles@1.2.13
 angular:angular@1.4.5
+angular:angular-animate@1.4.5
 angularui:angular-ui-router@0.2.15
 angularutils:pagination@0.7.0
 autoupdate@1.2.1
@@ -20,6 +21,7 @@ boilerplate-generator@1.0.3
 bozhao:link-accounts@1.1.4
 callback-hook@1.0.3
 check@1.0.5
+chrismbeckett:toastr@2.1.2_1
 civilframe:angular-jade@0.0.3
 coffeescript@1.0.6
 dburles:mongo-collection-instances@0.3.4
@@ -29,6 +31,7 @@ ejson@1.0.6
 email@1.0.6
 facebook@1.2.1
 fastclick@1.0.3
+fortawesome:fontawesome@4.4.0
 geojson-utils@1.0.3
 github@1.1.3
 google@1.1.5
@@ -53,6 +56,7 @@ mobile-status-bar@1.0.3
 mongo@1.1.0
 mquandalle:bower@1.4.1_3
 mquandalle:stylus@1.1.1
+natestrauser:animate-css@3.2.6
 ndxbxrme:modified@0.2.0
 ndxbxrme:ng-coffeescript@1.2.2
 npm-bcrypt@0.7.8_2
@@ -72,6 +76,7 @@ session@1.1.0
 sha@1.0.3
 spacebars@1.0.6
 spacebars-compiler@1.0.6
+spectrum:material-design-lite@0.0.4
 srp@1.0.3
 templating@1.1.1
 tmeasday:publish-counts@0.7.1

@@ -1,6 +1,11 @@
-.toolbar
-  span.navbar-left
-    meteor-include(src='loginButtons')
-    a(ng-href='/about') About
-  span.navbar-right 
-    a(href='/') semlepRebuildApp
+div
+  login
+  .toolbar
+    span.navbar-left 
+      a(href='/') semlepRebuildApp
+    span.navbar-right(ng-hide='currentUser._id')
+      a(href='', ng-click='login.popLogin()') Login/register
+      //meteor-include(src='loginButtons')
+      a(ng-href='/about') About
+    span.navbar-right(ng-show='currentUser._id')
+      a(href='', ng-click='login.doLogout()') Logout

@@ -1,1 +1,37 @@
-p This is the {{ property }} directive
+.login-overlay.ng-hide(ng-click='login.hideLogin()', ng-show="login.showLogin()")
+  form.login-inner(ng-submit='')
+    .login-panel.ui-panel(ng-click='$event.stopPropagation()')
+      header
+        .left.logo.animated.fadeIn
+          a(href='#logo') SEMLEP
+        .right
+          a.close-button(href='', ng-click='login.showLogin=undefined')
+            i.fa.fa-fw.fa-close
+      .login-form
+        .subtitle.left Login or register
+        .error.right {{login.loginError}}
+        .mdl-textfield.mdl-js-textfield
+          input.mdl-textfield__input(type='text', id='email', ng-model='loginUser.email')
+          label.mdl-textfield__label(for='email') Email
+          span.mdl-textfield__error Please enter and email address
+        .mdl-textfield.mdl-js-textfield
+          input.mdl-textfield__input(type='password', id='password', ng-model='loginUser.password')
+          label.mdl-textfield__label(for='password') Password
+      footer
+        | Login with
+        div
+          .left.social-login
+            div
+              button.mdl-button.mdl-js-button.mdl-button--icon(ng-click='login.loginWithGithub()')
+                i.fa.fa-fw.fa-github
+              button.mdl-button.mdl-js-button.mdl-button--icon
+                i.fa.fa-fw.fa-twitter
+              button.mdl-button.mdl-js-button.mdl-button--icon
+                i.fa.fa-fw.fa-facebook
+              button.mdl-button.mdl-js-button.mdl-button--icon
+                i.fa.fa-fw.fa-google-plus
+          .right.form-actions
+            div
+              button.mdl-button.mdl-js-button.mdl-js-ripple-effect.login(ng-click='login.loginWithPassword(loginUser)') Login
+              button.mdl-button.mdl-js-button.mdl-js-ripple-effect.register(ng-click='login.register(loginUser)') Register
+            a.forgot.right(href='#') Forgot password?
