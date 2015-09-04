@@ -1,1 +1,3 @@
-.container This is the {{ viewName }} view
+dashboard-page.container
+  dashboard-admin(ng-show='login.isAdmin()')
+  dashboard-adviser(ng-show='login.isAdviser()')

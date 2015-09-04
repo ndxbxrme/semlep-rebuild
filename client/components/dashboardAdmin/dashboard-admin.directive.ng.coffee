@@ -5,5 +5,6 @@ angular.module 'semlepRebuildApp'
   restrict: 'EA'
   templateUrl: 'client/components/dashboardAdmin/dashboard-admin.view.html'
   replace: true
+  scope: {}
   link: (scope, elem, attrs) ->
     scope.property = 'dashboardAdmin'
