@@ -5,8 +5,9 @@ angular.module 'semlepRebuildApp'
   $scope.faq = $scope.$meteorObject Faqs, {slug: $stateParams.faqSlug}, false
   $scope.$meteorSubscribe 'faqs' 
   .then -> 
-    $scope.profiles = $scope.$meteorCollection Profiles
     $scope.$meteorSubscribe 'profiles', {}, null, faqId:$scope.faq._id
+    .then ->
+      $scope.profiles = $scope.$meteorCollection Profiles
   $scope.specialisms = $scope.$meteorCollection Specialisms
   $scope.$meteorSubscribe 'specialisms'
   $scope.specialismSlug = $stateParams.specialismSlug

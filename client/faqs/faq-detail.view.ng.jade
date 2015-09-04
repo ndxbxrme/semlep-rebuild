@@ -15,5 +15,5 @@
       h3 One of these guys might help
       div(ng-repeat='profile in profiles')
         a(href='profiles/{{profile.slug}}/{{specialismSlug}}/{{faq.slug}}') {{profile.name}}
-    div(ng-hide='profiles.length')
+    div(ng-show='profiles && !profiles.length')
       h3 No one can help you
