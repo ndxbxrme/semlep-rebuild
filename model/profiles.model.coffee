@@ -4,6 +4,7 @@ Profiles.friendlySlugs()
 
 Profiles.allow
   insert: (userId, profile) ->
+    profile.adviserId = userId
     userId
   update: (userId, profile, fields, modifier) ->
     userId

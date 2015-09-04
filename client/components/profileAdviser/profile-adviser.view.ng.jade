@@ -1,1 +1,32 @@
-p Adviser
+mixin textbox(title, name, ...errors)
+  div.flexy-div
+    label=title
+      input(type='text', placeholder=title, name=name, ng-model='profile.#{name}')&attributes(attributes)
+      each error in errors
+        span.error(ng-show='submitted && form.#{name}.$error.#{error.name}')=error.text
+mixin multicheck(title, name)
+  div
+    label=title
+    multi-check(ng-model='profile.#{name}')
+      multi-check-item(ng-repeat='item in #{name}', value='{{item._id}}') {{item.name}}
+div
+  h1(ng-hide='profile.createdAt') Please set up your profile
+  h1(ng-show='profile.createdAt') Profile details
+  form(ng-submit='save()', name='form', novalidate)
+    +textbox('Title', 'title', {name:'required',text:'Title is required'})(required)
+    +textbox('Subtitle', 'subtitle')
+    +textbox('Adviser Name', 'name', {name:'required',text:'Please add a name'})(required)
+    +textbox('Company Name', 'companyName')
+    div
+      label Adviser image
+      image-uploader(ng-model='profile.adviserImage')
+    div
+      label Company image
+      image-uploader(ng-model='profile.companyImage')
+    +multicheck('Locations you deal with', 'locations')
+    +multicheck('Specialisms you deal with', 'specialisms')
+    +multicheck('Sectors you deal with', 'sectors')
+    +multicheck('Business Stages you deal with', 'stages')
+    +multicheck('Business Sizes you deal with', 'sizes')
+    div
+      input(type='submit', value='Save')

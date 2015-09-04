@@ -56,7 +56,9 @@ mobile-status-bar@1.0.3
 mongo@1.1.0
 mquandalle:bower@1.4.1_3
 mquandalle:stylus@1.1.1
+mrt:modernizr-meteor@2.6.2
 natestrauser:animate-css@3.2.6
+ndxbxrme:angular-multi-check@0.6.0
 ndxbxrme:modified@0.2.0
 ndxbxrme:ng-coffeescript@1.2.2
 npm-bcrypt@0.7.8_2

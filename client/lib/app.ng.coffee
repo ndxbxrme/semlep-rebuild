@@ -2,6 +2,9 @@ angular.module 'semlepRebuildApp', [
   'angular-meteor'
   'ui.router'
   'angularUtils.directives.dirPagination'
+  'ngAnimate'
+  'multi-check'
+  'ngFileUpload'
 ]
 
 onReady = () ->
