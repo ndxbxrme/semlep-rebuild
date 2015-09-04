@@ -1,4 +1,5 @@
 @Sizes = new Mongo.Collection('sizes')
+Sizes.ndxModified()
 
 Sizes.allow
   insert: (userId, size) ->

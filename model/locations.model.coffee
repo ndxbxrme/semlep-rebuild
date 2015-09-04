@@ -1,9 +1,10 @@
 @Locations = new Mongo.Collection('locations')
+Locations.ndxModified()
 
 Locations.allow
   insert: (userId, location) ->
-    userId
+    Roles.userIsInRole userId, ['admin']
   update: (userId, location, fields, modifier) ->
-    userId
+    Roles.userIsInRole userId, ['admin']
   remove: (userId, location) ->
-    userId
+    Roles.userIsInRole userId, ['admin']

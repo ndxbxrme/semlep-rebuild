@@ -1,9 +1,10 @@
 @Cms = new Mongo.Collection('cms')
+Cms.ndxModified()
 
 Cms.allow
   insert: (userId, cm) ->
-    userId
+    Roles.userIsInRole userId, ['admin']
   update: (userId, cm, fields, modifier) ->
-    userId
+    Roles.userIsInRole userId, ['admin']
   remove: (userId, cm) ->
-    userId
+    Roles.userIsInRole userId, ['admin']

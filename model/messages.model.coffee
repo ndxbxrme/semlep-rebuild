@@ -1,4 +1,5 @@
 @Messages = new Mongo.Collection('messages')
+Messages.ndxModified()
 
 Messages.allow
   insert: (userId, message) ->
@@ -6,4 +7,4 @@ Messages.allow
   update: (userId, message, fields, modifier) ->
     userId
   remove: (userId, message) ->
-    userId
+    Roles.userIsInRole userId, ['admin']

@@ -2,8 +2,8 @@
 
 Queries.allow
   insert: (userId, query) ->
-    userId
+    true
   update: (userId, query, fields, modifier) ->
-    userId
+    true
   remove: (userId, query) ->
-    userId
+    Roles.userIsInRole userId, ['admin']

@@ -1,9 +1,10 @@
 @Stages = new Mongo.Collection('stages')
+Stages.ndxModified()
 
 Stages.allow
   insert: (userId, stage) ->
-    userId
+    Roles.userIsInRole userId, ['admin']
   update: (userId, stage, fields, modifier) ->
-    userId
+    Roles.userIsInRole userId, ['admin']
   remove: (userId, stage) ->
-    userId
+    Roles.userIsInRole userId, ['admin']

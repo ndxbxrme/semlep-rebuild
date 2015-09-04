@@ -1,9 +1,10 @@
 @Terms = new Mongo.Collection('terms')
+Terms.ndxModified()
 
 Terms.allow
   insert: (userId, term) ->
-    userId
+    Roles.userIsInRole userId, ['admin']
   update: (userId, term, fields, modifier) ->
-    userId
+    Roles.userIsInRole userId, ['admin']
   remove: (userId, term) ->
-    userId
+    Roles.userIsInRole userId, ['admin']

@@ -1,9 +1,10 @@
 @Specialisms = new Mongo.Collection('specialisms')
+Specialisms.ndxModified()
 
 Specialisms.allow
   insert: (userId, specialism) ->
-    userId
+    Roles.userIsInRole userId, ['admin']
   update: (userId, specialism, fields, modifier) ->
-    userId
+    Roles.userIsInRole userId, ['admin']
   remove: (userId, specialism) ->
-    userId
+    Roles.userIsInRole userId, ['admin']

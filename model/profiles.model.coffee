@@ -1,9 +1,11 @@
 @Profiles = new Mongo.Collection('profiles')
+Profiles.ndxModified()
+Profiles.friendlySlugs()
 
 Profiles.allow
   insert: (userId, profile) ->
-    true
+    userId
   update: (userId, profile, fields, modifier) ->
-    true
+    userId
   remove: (userId, profile) ->
-    true
+    Roles.userIsInRole userId, ['admin']
