@@ -20,7 +20,7 @@ angular.module 'semlepRebuildApp'
         $meteor.waitForUser()
       ]
   .state 'faq-detail',
-    url: '/faqs/:faqId'
+    url: '/faqs/:spacialismSlug/:faqSlug'
     templateUrl: 'client/faqs/faq-detail.view.html'
     controller: 'FaqDetailCtrl'
     resolve:

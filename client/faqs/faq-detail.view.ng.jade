@@ -1,7 +1,19 @@
 .faq-detail.container
-  h1 Here are the details of the faq
-  form(ng-submit='save()', name='form', novalidate='')
-    input.form-control(type='text', placeholder='Name', ng-model='faq.name')
-    span.input-group-btn
-      input.btn.btn-primary(type='submit', value='Save')
-      input.btn(type='button', ng-click='reset()', value='Reset')
+  div(ng-show='login.isAdmin()')
+    h1 Here are the details of the faq
+    form(ng-submit='save()', name='form', novalidate='')
+      input.form-control(type='text', placeholder='Name', ng-model='faq.name')
+      br
+      multi-check(ng-model='faq.specialismIds')
+        multi-check-item(ng-repeat='specialism in specialisms', value='{{specialism._id}}') {{specialism.name}}
+      span.input-group-btn
+        input.btn.btn-primary(type='submit', value='Save')
+        input.btn(type='button', ng-click='reset()', value='Reset')
+  div(ng-show='!currentUser._id')
+    h1 {{ faq.name }}
+    div(ng-show='profiles.length')
+      h3 One of these guys might help
+      div(ng-repeat='profile in profiles')
+        a(href='profiles/{{profile.slug}}/{{specialismSlug}}/{{faq.slug}}') {{profile.name}}
+    div(ng-hide='profiles.length')
+      h3 No one can help you
