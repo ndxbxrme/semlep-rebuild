@@ -1,24 +1,34 @@
 .faqs-list.container
   h1 Faqs
-  form(ng-submit='save()', name='form', novalidate='')
-    p.input-group
-      input.form-control(type='text', placeholder='Name', ng-model='newFaq.name')
-      span.input-group-btn
-        input.btn.btn-primary(type='submit', value='Add')
-  .panel.panel-default
-    .panel-body
-      .input-group.pull-right.col-md-3.col-sm-12
-        input.form-control(type='search', ng-model='search', placeholder='Search')
-        .dropdown.input-group-btn(dropdown='', on-toggle='toggled(open)')
-          button.btn.btn-primary.dropdown-toggle(dropdown-toggle='') {{ orderProperty==='1' ? 'Ascending' : 'Descending' }}
-            span.caret
-          ul.dropdown-menu(role='menu')
-            li(ng-click="orderProperty='1'") Ascending
-            li(ng-click="orderProperty='-1'") Descending
-      ul.nav.nav-tabs.nav-stacked.col-md-9.col-sm-12
-        li(dir-paginate='faq in faqs | itemsPerPage: perPage', total-items='faqsCount.count',  current-page='page')
-          p
-            a(href='/faqs/{{faq._id}}') {{ faq.name }}
-            button.btn(ng-click='remove(faq)') &times;
-      dir-pagination-controls.col-md-12(on-page-change='pageChanged(newPageNumber)')
-  p Total number of faqs: {{faqsCount.count}}
+    span(ng-show='specialismId') &nbsp;- {{specialism.name}}
+  div(ng-hide='specialismId')
+    div(ng-repeat='specialism in specialisms')
+      a(href='faqs/{{specialism.slug}}') {{specialism.name}}
+  div(ng-show='specialismId')
+    form(ng-submit='save()', name='form', novalidate='')
+      p.input-group
+        input.form-control(type='text', placeholder='Name', ng-model='newFaq.name')
+        span.input-group-btn
+          input.btn.btn-primary(type='submit', value='Add')
+    .panel.panel-default
+      .panel-body
+        .input-group.pull-right.col-md-3.col-sm-12
+          input.form-control(type='search', ng-model='search', placeholder='Search')
+          .dropdown.input-group-btn(dropdown='', on-toggle='toggled(open)')
+            button.btn.btn-primary.dropdown-toggle(dropdown-toggle='') {{ orderProperty==='1' ? 'Ascending' : 'Descending' }}
+              span.caret
+            ul.dropdown-menu(role='menu')
+              li(ng-click="orderProperty='1'") Ascending
+              li(ng-click="orderProperty='-1'") Descending
+        ul.nav.nav-tabs.nav-stacked.col-md-9.col-sm-12
+          li(dir-paginate='faq in faqs | itemsPerPage: perPage', total-items='faqsCount.count',  current-page='page')
+            div(ng-show='currentUser._id')
+              p(ng-show='login.isAdmin()')
+                a(href='/faqs/{{faq._id}}') {{ faq.name }}
+                button.btn(ng-click='remove(faq)') &times;
+              p(ng-show='login.isAdviser()')
+                a(href='', ng-click='toggleFaq(faq)', ng-class='{subscribed:subscribedToFaq(faq)}') {{ faq.name }}
+            div(ng-hide='currentUser._id')
+              a(href='/faqs/{{specialism.slug}}/{{faq.slug}}') {{ faq.name }}
+        dir-pagination-controls.col-md-12(on-page-change='pageChanged(newPageNumber)')
+    p Total number of faqs: {{faqsCount.count}}
