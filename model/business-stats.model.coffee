@@ -1,5 +1,5 @@
 @BusinessStats = new Mongo.Collection('businessStats')
-BusinsessStats.ndxModified()
+BusinessStats.ndxModified()
 
 BusinessStats.allow
   insert: (userId, businessStat) ->
